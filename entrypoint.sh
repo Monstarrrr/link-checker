@@ -56,6 +56,7 @@ fi
 if [ "$BROKEN_COUNT" -gt 0 ] 
 then 
     RESULT="$BROKEN_COUNT broken link(s) found (out of $TOTAL_COUNT total)"
+    echo -e "$OUTPUT"
     echo -e "$RED Failed $RESULT: $NC"
     grep -E 'BROKEN' <<< "$OUTPUT" | awk '{print "[✗] " $2 "\n" }'
     echo -e "$PURPLE ============================== $NC"
